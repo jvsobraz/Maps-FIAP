@@ -1,20 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState, useRef } from 'react';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import {
+  LocationAccuracy,
+  getCurrentPositionAsync,
+  requestForegroundPermissionsAsync,
+  watchPositionAsync,
+} from 'expo-location'; 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import MapView, { Marker } from 'react-native-maps';
+
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
